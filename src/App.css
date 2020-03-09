@@ -2,6 +2,94 @@
   text-align: center;
 }
 
+.App-header {
+  background-color: #5e227f;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.navbar {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  background: 
+#1b242f;
+border-bottom: 3px solid
+  #1fe5bd;
+  height: 50px;
+  text-align: left;
+  width: 100%;
+  z-index: 99;
+  align-items: center;
+  display: flex;
+}
+
+.navitems {
+  display: flex;
+  flex-direction: row;
+  padding-left: 10%;
+  align-items: center;
+}
+
+.navtext {
+  font-size: 22px;
+  margin-right: 40px;
+  /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+}
+
+.header-button {
+
+  padding: 10px;
+  border-style: solid;
+  border-radius: 5px;
+}
+
+
+.header-second {
+  -webkit-animation-name: fadeIn; 
+  -webkit-animation-duration: 4s;
+  animation-name: fadeIn;
+  animation-duration: 4s;
+
+  
+}
+
+.header-third {
+  position: absolute;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 3s;
+  animation-name: slideIn;
+  animation-duration: 3s
+}
+
+
+/* Add Animation */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+@-webkit-keyframes slideIn {
+  from {bottom: 0; opacity: 0} 
+  to {bottom: 52%; opacity: 1}
+}
+
+@keyframes slideIn {
+  from {bottom: 0; opacity: 0}
+  to {bottom: 52%; opacity: 1}
+}
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -13,16 +101,7 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+
 
 .App-link {
   color: #61dafb;
