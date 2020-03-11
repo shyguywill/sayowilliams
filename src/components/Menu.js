@@ -1,26 +1,34 @@
 import React from 'react';
 import '../App.css';
 
-export const Menu = ({children}) => {
+export const Menu = (props) => {
+
+    const headerStyle = {
+        bottom: '0px',left: '0px', position: 'absolute'
+    }
+
+    const pageStyle = {
+        top: '0px',left: '0px', position: 'fixed'
+    }
     return (
         <div className="d-none d-md-block">
-            <nav className="navbar" >
+            <nav className="navbar" style={props.headerVisible ?  headerStyle : pageStyle} >
                 <div className="navitems">
-                    <div className="navtext">
+                    <a href="#home" className="navtext">
                         Home
-                    </div>
-                    <div className="navtext">
+                    </a>
+                    <a href="#about" className="navtext">
                         About
-                    </div>
-                    <div className="navtext">
-                        Portfolio
-                    </div>
-                    <div className="navtext">
+                    </a>
+                    <a href="#projects" className="navtext">
+                        Projects
+                    </a>
+                    <a href="#articles" className="navtext">
                         Articles
-                    </div>
-                    <div className="navtext">
+                    </a>
+                    <a href="#contact" className="navtext">
                         Contact
-                    </div>
+                    </a>
                 </div>
             </nav>
         </div>

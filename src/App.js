@@ -7,10 +7,12 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        <About />
-        <Projects />
-        <Articles />
-        <Contact />
+        <div className="body">
+          <About />
+          <Projects />
+          <Articles />
+          <Contact />
+        </div>
       </div>
     )
   }

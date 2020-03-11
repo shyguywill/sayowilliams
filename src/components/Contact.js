@@ -4,7 +4,7 @@ import '../App.css';
 class Contact extends React.Component {
     render() {
         return (
-            <section>
+            <section id="contact">
             <div>
                 <h1>
                    Contact

@@ -4,7 +4,7 @@ import '../App.css';
 class Articles extends React.Component {
     render() {
         return (
-            <section>
+            <section id="articles">
             <div>
                 <h1>
                     Articles
