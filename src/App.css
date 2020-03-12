@@ -89,8 +89,10 @@ section {
   display: flex;
   flex-direction: column;
   width: 50%;
-  border-radius: 20px;
+  border-radius: 5px;
   justify-content: space-between;
+  height: 80vh;
+
 }
 
 .mobile-column {
@@ -102,7 +104,7 @@ section {
   min-height: 80vh;
 }
 
-.about-text {
+.bio-text {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -116,16 +118,46 @@ section {
   padding: 5px;
 }
 
+.skill-text {
+  padding: 15px;
+  font-weight: bolder;
+}
+
+.skills-main-bar {
+  display: flex;
+  position: relative;
+  background-color: #1b242f;
+  justify-content: start;
+  margin-left: 10px;
+  border-radius: 5px;
+  width: 98%;
+  height: 7%;
+}
+
+.skills-main-bar-mobile {
+  display: flex;
+  position: relative;
+  background-color: #1b242f;
+  justify-content: start;
+  /* margin-left: 10px; */
+  border-radius: 5px;
+  width: 98%;
+  height: 35px;
+}
+
 .skills {
   display: flex;
   flex-direction: row-reverse;
   justify-content: start;
   align-items: center;
-  /* margin-top: 20px; */
-  margin-left: 10px;
+  padding: 2px;
   background-color: #1fe5bd;
   border-radius: 5px;
   color: white;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  height: 100%;
 }
 
 .skills-mobile {
@@ -137,6 +169,14 @@ section {
   background-color: #1fe5bd;
   border-radius: 5px;
   color: white;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  height: 100%;
+}
+
+.skill-image {
+  height: 80%;
 }
 
 
