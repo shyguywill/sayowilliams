@@ -3,8 +3,21 @@ import '../App.css';
 
 
 class About extends React.Component {
+
+    state = {imageSelected: 0}
+
+    handleMouseOver(index) {
+        this.setState({imageSelected: 1})
+        console.log('over')
+       
+    }
+
+    handleMouseOut() {
+        this.setState({ imageSelected: 0 })
+        console.log('out')
+    }
     render() {
-        const image = 'https://media.gq.com/photos/5963fe297bf9083f8bf87fcd/master/w_2000,h_2667,c_limit/john-boyega-burberry-close-up-0817-GQ-FEBO12-01.jpg'
+        const image = [process.env.PUBLIC_URL + '/me/me1.jpeg', process.env.PUBLIC_URL + '/me/me2.jpeg']
         return (
             <section id="about">
                 <div>
@@ -14,10 +27,10 @@ class About extends React.Component {
                     
                     <div className="d-none d-md-block">
                         <div className="about">
-                            <div className="about-section" style={{backgroundImage: `url(${image})`, backgroundSize: 'cover', }}>
+                            <div className="about-section" style={{backgroundImage: `url(${image[this.state.imageSelected]})`, backgroundSize: 'cover', }} onMouseEnter={() => this.handleMouseOver()} onMouseLeave={() => this.handleMouseOut()}>
                                 {/* <div className="profile-image" style={{backgroundImage: `url(${image})`, backgroundSize: 'cover'}}/> */}
-
                                 <div className="bio-text">
+                                    
                                     <h2> Who am I ? </h2>
                                     <div> 
                                         I am a front-end developer with a passion for creating inuitive and dynamic user experiences.
@@ -29,16 +42,16 @@ class About extends React.Component {
                             <div className="about-section"> 
                                 <div className="skills-main-bar">
                                     <div className="skills" style={{width: '90%'}}>
-                                        <img src={process.env.PUBLIC_URL + '/skills/react.png'} alt="logo" className="skill-image" />
                                         {/* <div className="about-section" style={{backgroundImage: `url(${process.env.PUBLIC_URL + '/skills/react.png'})`, backgroundSize: 'contain', height: '50px', width: '50px'}}></div> */}
                                         <div className="skill-text">React Native</div>
+                                        <img src={process.env.PUBLIC_URL + '/skills/react.png'} alt="logo" className="skill-image" />
                                     </div>
                                 </div>
                                 
                                 <div className="skills-main-bar">
                                     <div className="skills" style={{width: '90%'}}>
-                                        <img src={process.env.PUBLIC_URL + '/skills/swift.png'} alt="logo" className="skill-image" />
-                                        <div className="skill-text">Swift/iOS</div>
+                                        <div className="skill-text" >Swift / iOS</div>
+                                        <img src={process.env.PUBLIC_URL + '/skills/swift.png'} alt="logo" className="skill-image"  />
                                     </div>
                                 </div>
 
@@ -76,6 +89,20 @@ class About extends React.Component {
                                         <div className="skill-text">HTML</div>
                                     </div>
                                 </div>
+
+                                <div className="skills-main-bar" >
+                                    <div className="skills" style={{width: '50%'}}>
+                                        {/* <img src={process.env.PUBLIC_URL + '/skills/html.png'} alt="logo" className="skill-image" /> */}
+                                        <div className="skill-text">Firebase</div>
+                                    </div>
+                                </div>
+
+                                <div className="skills-main-bar" >
+                                    <div className="skills" style={{width: '50%'}}>
+                                        {/* <img src={process.env.PUBLIC_URL + '/skills/html.png'} alt="logo" className="skill-image" /> */}
+                                        <div className="skill-text">RESTful API</div>
+                                    </div>
+                                </div>
                                 
                             </div>
                         </div>
@@ -83,7 +110,7 @@ class About extends React.Component {
 
                     <div className="d-md-none">
                         <div className="mobile">
-                            <div className="mobile-column" style={{backgroundImage: `url(${image})`, backgroundSize: 'cover', height: '80vh', borderRadius: '10px'}}>
+                            <div className="mobile-column" style={{backgroundImage: `url(${image[1]})`, backgroundSize: 'cover', height: '80vh', borderRadius: '10px'}}>
                                
                                 <div className="bio-text">
                                     <h2> Who am I ? </h2>
@@ -134,7 +161,7 @@ class About extends React.Component {
                                 <div className="skills-main-bar-mobile" >
                                     <div className="skills" style={{width: '60%'}}>
                                         <img src={process.env.PUBLIC_URL + '/skills/dart.png'} alt="logo" className="skill-image" />
-                                        <div className="skill-text">Dart</div>
+                                        <div className="skill-text">Dart / Flutter</div>
                                     </div>
                                 </div>
 
@@ -142,6 +169,20 @@ class About extends React.Component {
                                     <div className="skills" style={{width: '50%'}}>
                                         <img src={process.env.PUBLIC_URL + '/skills/html.png'} alt="logo" className="skill-image" />
                                         <div className="skill-text">HTML</div>
+                                    </div>
+                                </div>
+
+                                <div className="skills-main-bar-mobile" >
+                                    <div className="skills" style={{width: '50%'}}>
+                                        {/* <img src={process.env.PUBLIC_URL + '/skills/html.png'} alt="logo" className="skill-image" /> */}
+                                        <div className="skill-text">Firebase</div>
+                                    </div>
+                                </div>
+
+                                <div className="skills-main-bar-mobile" >
+                                <div className="skills" style={{width: '50%'}}>
+                                        {/* <img src={process.env.PUBLIC_URL + '/skills/html.png'} alt="logo" className="skill-image" /> */}
+                                        <div className="skill-text">RESTful API</div>
                                     </div>
                                 </div>
                             </div>

@@ -4,7 +4,7 @@ import '../App.css';
 export const Menu = (props) => {
 
     const headerStyle = {
-        bottom: '0px',left: '0px', position: 'absolute'
+        bottom: '-50px',left: '0px', position: 'absolute'
     }
 
     const pageStyle = {
