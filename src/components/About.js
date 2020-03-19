@@ -34,8 +34,7 @@ class About extends React.Component {
                                     <h2> Who am I ? </h2>
                                     <div> 
                                         I am a front-end developer with a passion for creating inuitive and dynamic user experiences.
-                                        My "why" is being problem solver and so I find fulfilment in solving problems in creative ways. I also enjoy learning, in fact, I am a self-taught developer.
-                                        My personal motto is ABLE - Always be learning, always be evolving.
+                                        A tinkerer and a problem solver, I find fulfilment in building creative solutions to problems.
                                     </div>
                                 </div>
                             </div>
@@ -78,6 +77,13 @@ class About extends React.Component {
 
                                 <div className="skills-main-bar" >
                                     <div className="skills" style={{width: '60%'}}>
+                                        {/* <img src={process.env.PUBLIC_URL + '/skills/html.png'} alt="logo" className="skill-image" /> */}
+                                        <div className="skill-text">React-redux</div>
+                                    </div>
+                                </div>
+
+                                <div className="skills-main-bar" >
+                                    <div className="skills" style={{width: '60%'}}>
                                         <img src={process.env.PUBLIC_URL + '/skills/dart.png'} alt="logo" className="skill-image" />
                                         <div className="skill-text">Dart / Flutter</div>
                                     </div>
@@ -93,16 +99,10 @@ class About extends React.Component {
                                 <div className="skills-main-bar" >
                                     <div className="skills" style={{width: '50%'}}>
                                         {/* <img src={process.env.PUBLIC_URL + '/skills/html.png'} alt="logo" className="skill-image" /> */}
-                                        <div className="skill-text">Firebase</div>
+                                        <div className="skill-text">Node JS</div>
                                     </div>
                                 </div>
 
-                                <div className="skills-main-bar" >
-                                    <div className="skills" style={{width: '50%'}}>
-                                        {/* <img src={process.env.PUBLIC_URL + '/skills/html.png'} alt="logo" className="skill-image" /> */}
-                                        <div className="skill-text">RESTful API</div>
-                                    </div>
-                                </div>
                                 
                             </div>
                         </div>
@@ -116,8 +116,7 @@ class About extends React.Component {
                                     <h2> Who am I ? </h2>
                                     <div> 
                                         I am a front-end developer with a passion for creating inuitive and dynamic user experiences.
-                                        My "why" is being problem solver, so I find fulfilment in solving problems in creative ways. I also enjoy learning, in fact, I am a self-taught developer.
-                                        My personal motto is ABLE - Always be learning, always be evolving.
+                                        A tinkerer and a problem solver, I find fulfilment in building creative solutions to problems.
                                     </div>
                                 </div>
                             </div>
@@ -160,6 +159,13 @@ class About extends React.Component {
 
                                 <div className="skills-main-bar-mobile" >
                                     <div className="skills" style={{width: '60%'}}>
+                                        {/* <img src={process.env.PUBLIC_URL + '/skills/html.png'} alt="logo" className="skill-image" /> */}
+                                        <div className="skill-text">React-redux</div>
+                                    </div>
+                                </div>
+
+                                <div className="skills-main-bar-mobile" >
+                                    <div className="skills" style={{width: '60%'}}>
                                         <img src={process.env.PUBLIC_URL + '/skills/dart.png'} alt="logo" className="skill-image" />
                                         <div className="skill-text">Dart / Flutter</div>
                                     </div>
@@ -175,16 +181,13 @@ class About extends React.Component {
                                 <div className="skills-main-bar-mobile" >
                                     <div className="skills" style={{width: '50%'}}>
                                         {/* <img src={process.env.PUBLIC_URL + '/skills/html.png'} alt="logo" className="skill-image" /> */}
-                                        <div className="skill-text">Firebase</div>
+                                        <div className="skill-text">Node js</div>
                                     </div>
                                 </div>
 
-                                <div className="skills-main-bar-mobile" >
-                                <div className="skills" style={{width: '50%'}}>
-                                        {/* <img src={process.env.PUBLIC_URL + '/skills/html.png'} alt="logo" className="skill-image" /> */}
-                                        <div className="skill-text">RESTful API</div>
-                                    </div>
-                                </div>
+                                
+
+                                
                             </div>
                         </div>
                     </div>
