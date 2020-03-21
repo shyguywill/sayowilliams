@@ -1,9 +1,8 @@
 import React from 'react';
 import '../App.css';
-
 class Projects extends React.Component {
 
-    state = {infoDisplay: 0}
+    state = {infoDisplay: 0 }
 
     handleMouseOver(index) {
         this.setState({infoDisplay: index})
@@ -15,6 +14,8 @@ class Projects extends React.Component {
         this.setState({ infoDisplay: 0 })
         console.log('out')
     }
+
+
 
     render() {
         return (
@@ -31,13 +32,13 @@ class Projects extends React.Component {
                                 <div style={{position: 'relative'}} >
                                 
                                     <div style={{display: 'flex', flexDirection: 'row', position: 'relative', flexWrap: 'wrap', justifyContent: 'center'}}>
-                                        <img src={process.env.PUBLIC_URL + '/projects/platter/0.jpg'} alt="logo" style={{width: '25%'}}/>
+                                        <img src={process.env.PUBLIC_URL + '/projects/platter/0.jpg'} alt="logo" style={{width: '25%', borderTopLeftRadius: '5px', borderBottomLeftRadius: '5px'}}/>
                                         <img src={process.env.PUBLIC_URL + '/projects/platter/3.jpg'} alt="logo3" style={{width: '25%'}}/>
                                         <img src={process.env.PUBLIC_URL + '/projects/platter/2.jpg'} alt="logo2" style={{width: '25%'}}/>
-                                        <img src={process.env.PUBLIC_URL + '/projects/platter/4.jpg'} alt="logo4" style={{width: '25%'}}/> 
+                                        <img src={process.env.PUBLIC_URL + '/projects/platter/4.jpg'} alt="logo4" style={{width: '25%', borderTopRightRadius: '5px', borderBottomRightRadius: '5px'}}/> 
                                     </div>
                                 
-                                    <div style={{display: this.state.infoDisplay === 1 ? 'flex' : 'none', position: 'absolute', left: 0, top: 0, backgroundColor: 'rgba(0,0,0,0.5)', height: '100%', width: '100%', justifyContent: 'center', alignItems: 'center' }}>
+                                    <div style={{display: this.state.infoDisplay === 1 ? 'flex' : 'none', position: 'absolute', left: 0, top: 0, backgroundColor: 'rgba(0,0,0,0.5)', height: '100%', width: '100%', justifyContent: 'center', alignItems: 'center', borderRadius: '5px' }}>
                                         <div style={{ display: 'flex', flexDirection: 'column', margin: '10px', justifyContent: 'space-between', color: 'white', alignItems: 'center', height: '100%'}}>
                                             <div>
                                                 <div>Swift / Dart </div>
@@ -57,13 +58,13 @@ class Projects extends React.Component {
                                 <div style={{position: 'relative' }} >
 
                                     <div style={{display: 'flex', flexDirection: 'row', position: 'relative', flexWrap: 'wrap', justifyContent: 'center'}}>
-                                        <img src={process.env.PUBLIC_URL + '/projects/tightup/ionic 1.png'} alt="logo" style={{width: '25%'}}/>
+                                        <img src={process.env.PUBLIC_URL + '/projects/tightup/ionic 1.png'} alt="logo" style={{width: '25%', borderTopLeftRadius: '5px', borderBottomLeftRadius: '5px'}}/>
                                         <img src={process.env.PUBLIC_URL + '/projects/tightup/ionic 2.png'} alt="logo" style={{width: '25%'}}/>
                                         <img src={process.env.PUBLIC_URL + '/projects/tightup/versa 1.png'} alt="logo" style={{width: '25%'}}/>
-                                        <img src={process.env.PUBLIC_URL + '/projects/tightup/versa 2.png'} alt="logo" style={{width: '25%'}}/>
+                                        <img src={process.env.PUBLIC_URL + '/projects/tightup/versa 2.png'} alt="logo" style={{width: '25%', borderTopRightRadius: '5px', borderBottomRightRadius: '5px'}}/>
                                     </div>
                                 
-                                    <div style={{display: this.state.infoDisplay === 2 ? 'flex' : 'none', position: 'absolute', left: 0, top: 0, backgroundColor: 'rgba(0,0,0,0.5)', height: '100%', width: '100%', justifyContent: 'center', alignItems: 'center' }}>
+                                    <div style={{display: this.state.infoDisplay === 2 ? 'flex' : 'none', position: 'absolute', left: 0, top: 0, backgroundColor: 'rgba(0,0,0,0.5)', height: '100%', width: '100%', justifyContent: 'center', alignItems: 'center', borderRadius: '5px' }}>
                                         <div style={{ display: 'flex', flexDirection: 'column', margin: '10px', justifyContent: 'space-between', color: 'white', alignItems: 'center', height: '100%'}}>
                                             <div>
                                                 <div> JavaScript / CSS / SVG </div>
@@ -86,20 +87,17 @@ class Projects extends React.Component {
                         <div> Gallery</div>
                         
                         <div style={{display: 'flex', flexDirection: 'row', marginBottom: '20px', marginTop: '20px', justifyContent: 'center', width: '100%', flexWrap: 'wrap'}}>
-                            <div style={{width: '33%', minWidth: '300px', flexGrow: 1, marginBottom: '20px'}} onMouseEnter={() => this.handleMouseOver(3)} onMouseLeave={() => this.handleMouseOut()} >
+                            <div style={{width: '33%', minWidth: '300px', flexGrow: 1, marginBottom: '20px',}} onMouseEnter={() => this.handleMouseOver(3)} onMouseLeave={() => this.handleMouseOut()} >
                                     <div style={{position: 'relative', width: '100%' }} >
 
-                                    <div style={{backgroundImage: `url(${process.env.PUBLIC_URL + '/projects/features/images/cam.jpg'})`, backgroundSize: 'cover', width: '100%', height: '300px', position: 'relative'}}></div>
+                                    <div style={{backgroundImage: `url(${process.env.PUBLIC_URL + '/projects/features/images/cam.jpg'})`, backgroundSize: 'cover', width: '100%', height: '300px', position: 'relative', borderTopLeftRadius: '5px', borderBottomLeftRadius: '5px'}}></div>
                                     
                                         <div style={{display: this.state.infoDisplay === 3 ? 'flex' : 'none', position: 'absolute', left: 0, top: 0, backgroundColor: 'rgba(0,0,0,0.5)', height: '100%', width: '100%', justifyContent: 'center', alignItems: 'center' }}>
                                             <div style={{ display: 'flex', flexDirection: 'column', margin: '10px', justifyContent: 'center', color: 'white', alignItems: 'center'}}>
                                                 <div> React Native </div>
                                                 <div>Camera Library</div>
-                                                <a href="https://gallery.fitbit.com/details/a4758ffa-d763-41ea-bd57-f187f290efdf" style={{ color: '#32FBA4'}}>
-                                                    <div >
-                                                        Learn More 
-                                                    </div>
-                                                </a>
+                                                <div>I designed and built the Camera library that is being used in the synced appication.</div>
+                                                <button onClick={() => this.props.toggleGallery(true, 'cam', 'web')}>Preview</button>
                                             </div>
                                         </div>
 
@@ -108,17 +106,14 @@ class Projects extends React.Component {
                             <div style={{width: '33%', minWidth: '300px', flexGrow: 1, marginBottom: '20px'}} onMouseEnter={() => this.handleMouseOver(4)} onMouseLeave={() => this.handleMouseOut()} >
                                     <div style={{position: 'relative', width: '100%'}} >
 
-                                    <div style={{backgroundImage: `url(${process.env.PUBLIC_URL + '/projects/features/images/reactions.jpg'})`, backgroundSize: 'cover', width: '100%', height: '300px'}}></div>
+                                    <div style={{backgroundImage: `url(${process.env.PUBLIC_URL + '/projects/features/images/reactions.jpg'})`, backgroundSize: 'cover', width: '100%', height: '300px', borderTopRightRadius: '5px', borderBottomRightRadius: '5px'}}></div>
                                     
                                         <div style={{display: this.state.infoDisplay === 4 ? 'flex' : 'none', position: 'absolute', left: 0, top: 0, backgroundColor: 'rgba(0,0,0,0.5)', height: '100%', width: '100%', justifyContent: 'center', alignItems: 'center' }}>
                                             <div style={{ display: 'flex', flexDirection: 'column', margin: '10px', justifyContent: 'center', color: 'white', alignItems: 'center'}}>
                                                 <div> React Native </div>
                                                 <div>Reaction Component</div>
-                                                <a href="https://gallery.fitbit.com/details/a4758ffa-d763-41ea-bd57-f187f290efdf" style={{ color: '#32FBA4'}}>
-                                                    <div >
-                                                        Learn More 
-                                                    </div>
-                                                </a>
+                                                <div>I designed and built the user reactions that are being used in the synced appication.</div>
+                                                <button onClick={() => this.props.toggleGallery(true, 'reactions', 'web')}>Preview</button>
                                             </div>
                                         </div>
                                     </div>
@@ -208,11 +203,8 @@ class Projects extends React.Component {
                                             <div style={{ display: 'flex', flexDirection: 'column', margin: '10px', justifyContent: 'center', color: 'white', alignItems: 'center'}}>
                                                 <div> React Native </div>
                                                 <div>Camera Library</div>
-                                                <a href="https://gallery.fitbit.com/details/a4758ffa-d763-41ea-bd57-f187f290efdf" style={{ color: '#32FBA4'}}>
-                                                    <div >
-                                                        Learn More 
-                                                    </div>
-                                                </a>
+                                                <div>I designed and built the camera library that is being used in the synced appication.</div>
+                                                <button onClick={() => this.props.toggleGallery(true, 'cam', 'mobile')}>Preview</button>
                                             </div>
                                         </div>
 
@@ -227,11 +219,8 @@ class Projects extends React.Component {
                                             <div style={{ display: 'flex', flexDirection: 'column', margin: '10px', justifyContent: 'center', color: 'white', alignItems: 'center'}}>
                                                 <div> React Native </div>
                                                 <div>Reaction Component</div>
-                                                <a href="https://gallery.fitbit.com/details/a4758ffa-d763-41ea-bd57-f187f290efdf" style={{ color: '#32FBA4'}}>
-                                                    <div >
-                                                        Learn More 
-                                                    </div>
-                                                </a>
+                                                <div>I designed and built the user reactions that are being used in the synced appication.</div>
+                                                <button onClick={() => this.props.toggleGallery(true, 'reactions', 'mobile')}>Preview</button>
                                             </div>
                                         </div>
                                     </div>
