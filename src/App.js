@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {Articles, About, Projects, Header, Contact} from './components/index';
+import {Articles, About, Projects, Header, Contact, Footer} from './components/index';
 import Gallery from './components/Gallery';
 
 class App extends React.Component {
@@ -23,6 +23,7 @@ class App extends React.Component {
           <Articles />
           <Contact />
         </div>
+        <Footer />
         <Gallery 
           showGallery={this.state.showGallery}
           toggleGallery={this.toggleGallery}

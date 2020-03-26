@@ -2,12 +2,33 @@ import React from 'react';
 import '../App.css';
 class Projects extends React.Component {
 
-    state = {infoDisplay: 0 }
+    state = {infoDisplay: 0, sectionVisible: false }
+
+    isSection(el) {
+        //console.log(el.getBoundingClientRect().top)
+        return el.getBoundingClientRect().top < window.innerHeight;
+    }
+      
+    componentDidMount() {
+        document.addEventListener('scroll', this.trackScrolling);
+    }
+      
+    componentWillUnmount() {
+        document.removeEventListener('scroll', this.trackScrolling);
+    }
+      
+      trackScrolling = () => {
+        const wrappedElement = document.getElementById('projects'); 
+        if (this.isSection(wrappedElement)){
+            console.log('is project')
+            this.setState({ sectionVisible: true})
+            document.removeEventListener('scroll', this.trackScrolling);
+        }
+      };
 
     handleMouseOver(index) {
         this.setState({infoDisplay: index})
         console.log('over')
-       
     }
 
     handleMouseOut() {
@@ -19,7 +40,7 @@ class Projects extends React.Component {
 
     render() {
         return (
-           <section id="projects">
+           <section id="projects" className={this.state.sectionVisible ? "animated fadeInRightBig delay-1s" : "section-pre-loaded"}>
                <div style={{minHeight: '70vh', display: 'flex', flexDirection: 'column'}} className="d-none d-sm-block">
                    <h1 >
                        Projects
@@ -92,7 +113,7 @@ class Projects extends React.Component {
 
                                     <div style={{backgroundImage: `url(${process.env.PUBLIC_URL + '/projects/features/images/cam.jpg'})`, backgroundSize: 'cover', width: '100%', height: '300px', position: 'relative', borderTopLeftRadius: '5px', borderBottomLeftRadius: '5px'}}></div>
                                     
-                                        <div style={{display: this.state.infoDisplay === 3 ? 'flex' : 'none', position: 'absolute', left: 0, top: 0, backgroundColor: 'rgba(0,0,0,0.5)', height: '100%', width: '100%', justifyContent: 'center', alignItems: 'center' }}>
+                                        <div style={{display: this.state.infoDisplay === 3 ? 'flex' : 'none', position: 'absolute', left: 0, top: 0, backgroundColor: 'rgba(0,0,0,0.5)', height: '100%', width: '100%', justifyContent: 'center', alignItems: 'center', borderTopLeftRadius: '5px', borderBottomLeftRadius: '5px' }}>
                                             <div style={{ display: 'flex', flexDirection: 'column', margin: '10px', justifyContent: 'center', color: 'white', alignItems: 'center'}}>
                                                 <div> React Native </div>
                                                 <div>Camera Library</div>
@@ -108,7 +129,7 @@ class Projects extends React.Component {
 
                                     <div style={{backgroundImage: `url(${process.env.PUBLIC_URL + '/projects/features/images/reactions.jpg'})`, backgroundSize: 'cover', width: '100%', height: '300px', borderTopRightRadius: '5px', borderBottomRightRadius: '5px'}}></div>
                                     
-                                        <div style={{display: this.state.infoDisplay === 4 ? 'flex' : 'none', position: 'absolute', left: 0, top: 0, backgroundColor: 'rgba(0,0,0,0.5)', height: '100%', width: '100%', justifyContent: 'center', alignItems: 'center' }}>
+                                        <div style={{display: this.state.infoDisplay === 4 ? 'flex' : 'none', position: 'absolute', left: 0, top: 0, backgroundColor: 'rgba(0,0,0,0.5)', height: '100%', width: '100%', justifyContent: 'center', alignItems: 'center', borderTopRightRadius: '5px', borderBottomRightRadius: '5px' }}>
                                             <div style={{ display: 'flex', flexDirection: 'column', margin: '10px', justifyContent: 'center', color: 'white', alignItems: 'center'}}>
                                                 <div> React Native </div>
                                                 <div>Reaction Component</div>

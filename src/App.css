@@ -13,10 +13,25 @@
   color: white;
 }
 
+.App-footer {
+  background-color: #3e3193;
+  min-height: 33vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: white;
+}
+
 .body {
   margin-left: auto;
   margin-right: auto;
   width: 90%;
+}
+
+.section-pre-loaded{
+  visibility: hidden;
 }
 
 .navbar {
@@ -67,14 +82,6 @@ a:focus {
   border-radius: 5px;
 }
 
-.header-animation {
-  -webkit-animation-name: fadeIn; 
-  -webkit-animation-duration: 6s;
-  animation-name: fadeIn;
-  animation-duration: 6s;
-}
-
-
 section {
   padding-top: 5%;
   padding-bottom: 5%;
@@ -99,7 +106,6 @@ section {
   display: flex;
   flex-direction: column;
   width: 50%;
-  border-radius: 10px;
   justify-content: space-between;
   height: 70vh;
 

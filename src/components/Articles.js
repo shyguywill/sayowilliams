@@ -2,9 +2,34 @@ import React from 'react';
 import '../App.css';
 
 class Articles extends React.Component {
+
+    state = { sectionVisible: false }
+
+    isSection(el) {
+        console.log(el.getBoundingClientRect().top)
+        console.log(window.pageYOffset)
+        return el.getBoundingClientRect().top < window.innerHeight;
+    }
+      
+    componentDidMount() {
+        document.addEventListener('scroll', this.trackScrolling);
+    }
+      
+    componentWillUnmount() {
+        document.removeEventListener('scroll', this.trackScrolling);
+    }
+      
+      trackScrolling = () => {
+        const wrappedElement = document.getElementById('articles'); 
+        if (this.isSection(wrappedElement)){
+            console.log('is article')
+            this.setState({ sectionVisible: true})
+            document.removeEventListener('scroll', this.trackScrolling);
+        }
+      };
     render() {
         return (
-            <section id="articles">
+            <section id="articles" className={this.state.sectionVisible ? "animated fadeInLeftBig delay-1s" : "section-pre-loaded"}>
             <div>
                 <h1>
                     Articles

@@ -1,10 +1,32 @@
 import React from 'react';
 import '../App.css';
+import { Spring } from 'react-spring/renderprops'
 
 
 class About extends React.Component {
 
-    state = {imageSelected: 0}
+    state = {imageSelected: 0, sectionVisible: false}
+
+    isSection(el) {
+        return el.getBoundingClientRect().top < window.innerHeight;
+    }
+      
+      componentDidMount() {
+        document.addEventListener('scroll', this.trackScrolling);
+      }
+      
+      componentWillUnmount() {
+        document.removeEventListener('scroll', this.trackScrolling);
+      }
+      
+      trackScrolling = () => {
+        const wrappedElement = document.getElementById('about'); 
+        if (this.isSection(wrappedElement)){
+            console.log('is about')
+            this.setState({ sectionVisible: true})
+            document.removeEventListener('scroll', this.trackScrolling);
+        }
+      };
 
     handleMouseOver(index) {
         this.setState({imageSelected: 1})
@@ -19,7 +41,7 @@ class About extends React.Component {
     render() {
         const image = [process.env.PUBLIC_URL + '/me/me1.jpeg', process.env.PUBLIC_URL + '/me/me2.jpeg']
         return (
-            <section id="about">
+            <section id="about" className={this.state.sectionVisible ? "animated fadeInLeftBig delay-1s" : "section-pre-loaded"}>
                 <div>
                     <h1 style={{marginBottom: '50px'}}>
                         About
@@ -30,7 +52,6 @@ class About extends React.Component {
                             <div className="about-section" style={{backgroundImage: `url(${image[this.state.imageSelected]})`, backgroundSize: 'cover', }} onMouseEnter={() => this.handleMouseOver()} onMouseLeave={() => this.handleMouseOut()}>
                                 {/* <div className="profile-image" style={{backgroundImage: `url(${image})`, backgroundSize: 'cover'}}/> */}
                                 <div className="bio-text">
-                                    
                                     <h2> Who am I ? </h2>
                                     <div> 
                                         I am a front-end developer with a passion for creating inuitive and dynamic user experiences.

@@ -42,8 +42,8 @@ class Header extends React.Component {
             <header id="home" className="App-header">
                 <div >
                     <div style={{display: 'flex', flexDirection: 'row',}}>
-                        <h1>Hello,</h1>
-                        <div className="header-animation" style={{marginLeft: '10px', display: 'flex', flexDirection: 'row'}}> 
+                        <h1 className="animated wobble delay-1s">Hello,</h1>
+                        <div className="animated fadeIn delay-1s" style={{marginLeft: '10px', display: 'flex', flexDirection: 'row'}}> 
                             <h1>I'm</h1>
                             <span style={{marginLeft: '8px', color: '#6853f6', display: 'flex', }}>
                                 <h1>Sayo Williams.</h1>
@@ -51,7 +51,7 @@ class Header extends React.Component {
                         </div>
                     </div>
                 
-                    <div className="header-animation">
+                    <div className="animated fadeIn delay-2s slow">
                         <h1>
                             I build things with _code.
                         </h1>
@@ -59,7 +59,7 @@ class Header extends React.Component {
 
                 </div>
                 {/* <i aria-hidden="true" class="red rocket icon"></i> */}
-                <a href="#about" style={{marginTop: '100px', color: 'white'}}>
+                <a href="#about" style={{marginTop: '100px', color: 'white'}} className="animated fadeIn delay-2s slower">
                     <div className="header-button">
                         View my work 
                     </div>
