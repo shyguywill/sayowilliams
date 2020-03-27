@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-import { Spring } from 'react-spring/renderprops'
+
 
 
 class About extends React.Component {
@@ -8,6 +8,7 @@ class About extends React.Component {
     state = {imageSelected: 0, sectionVisible: false}
 
     isSection(el) {
+        
         return el.getBoundingClientRect().top < window.innerHeight;
     }
       
@@ -23,8 +24,9 @@ class About extends React.Component {
         const wrappedElement = document.getElementById('about'); 
         if (this.isSection(wrappedElement)){
             console.log('is about')
+            this.props.setSection('about')
             this.setState({ sectionVisible: true})
-            document.removeEventListener('scroll', this.trackScrolling);
+            //document.removeEventListener('scroll', this.trackScrolling);
         }
       };
 
@@ -41,11 +43,15 @@ class About extends React.Component {
     render() {
         const image = [process.env.PUBLIC_URL + '/me/me1.jpeg', process.env.PUBLIC_URL + '/me/me2.jpeg']
         return (
-            <section id="about" className={this.state.sectionVisible ? "animated fadeInLeftBig delay-1s" : "section-pre-loaded"}>
+            <section id="about" className={this.state.sectionVisible ? "animated fadeInLeftBig " : "section-pre-loaded"}>
                 <div>
-                    <h1 style={{marginBottom: '50px'}}>
-                        About
-                    </h1>
+                    <div className="section-header" style={{marginTop: '50px'}}>
+                        <h1 >
+                            About
+                        </h1>
+                        <div style={{height: '2px', width: '50px', backgroundColor: 'black'}}/>
+                    </div>
+                    
                     
                     <div className="d-none d-md-block">
                         <div className="about">
@@ -98,7 +104,7 @@ class About extends React.Component {
 
                                 <div className="skills-main-bar" >
                                     <div className="skills" style={{width: '60%'}}>
-                                        {/* <img src={process.env.PUBLIC_URL + '/skills/html.png'} alt="logo" className="skill-image" /> */}
+                                        <img src={process.env.PUBLIC_URL + '/skills/react.png'} alt="logo" className="skill-image" />
                                         <div className="skill-text">React-redux</div>
                                     </div>
                                 </div>
@@ -119,7 +125,7 @@ class About extends React.Component {
 
                                 <div className="skills-main-bar" >
                                     <div className="skills" style={{width: '50%'}}>
-                                        {/* <img src={process.env.PUBLIC_URL + '/skills/html.png'} alt="logo" className="skill-image" /> */}
+                                        <img src={process.env.PUBLIC_URL + '/skills/nodejs.png'} alt="logo" className="skill-image" />
                                         <div className="skill-text">Node JS</div>
                                     </div>
                                 </div>
@@ -180,7 +186,7 @@ class About extends React.Component {
 
                                 <div className="skills-main-bar-mobile" >
                                     <div className="skills" style={{width: '60%'}}>
-                                        {/* <img src={process.env.PUBLIC_URL + '/skills/html.png'} alt="logo" className="skill-image" /> */}
+                                        <img src={process.env.PUBLIC_URL + '/skills/react.png'} alt="logo" className="skill-image" />
                                         <div className="skill-text">React-redux</div>
                                     </div>
                                 </div>
@@ -201,7 +207,7 @@ class About extends React.Component {
 
                                 <div className="skills-main-bar-mobile" >
                                     <div className="skills" style={{width: '50%'}}>
-                                        {/* <img src={process.env.PUBLIC_URL + '/skills/html.png'} alt="logo" className="skill-image" /> */}
+                                        <img src={process.env.PUBLIC_URL + '/skills/node.png'} alt="logo" className="skill-image" />
                                         <div className="skill-text">Node js</div>
                                     </div>
                                 </div>

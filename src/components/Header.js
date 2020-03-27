@@ -32,6 +32,7 @@ class Header extends React.Component {
           //document.removeEventListener('scroll', this.trackScrolling);
         }  
         if (this.isHeader(wrappedElement) && !this.state.headerVisible){
+            this.props.setSection('home')
             console.log('is in header')
             this.setState({ headerVisible: true, crossedHeader: false })
             //document.removeEventListener('scroll', this.trackScrolling);
@@ -67,6 +68,7 @@ class Header extends React.Component {
 
                 <Menu 
                     headerVisible={this.state.headerVisible}
+                    section={this.props.section}
                 />
 
             </header>

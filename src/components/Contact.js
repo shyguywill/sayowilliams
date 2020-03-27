@@ -10,8 +10,6 @@ class Contact extends React.Component {
     state = { name: '', email: '', subject: '', message: '', sectionVisible: false}
 
     isSection(el) {
-      console.log(el.getBoundingClientRect().top)
-      console.log(window.pageYOffset)
       return el.getBoundingClientRect().top < window.innerHeight;
   }
     
@@ -26,9 +24,10 @@ class Contact extends React.Component {
     trackScrolling = () => {
       const wrappedElement = document.getElementById('contact'); 
       if (this.isSection(wrappedElement)){
-          console.log('is article')
+        this.props.setSection('contact');
+          console.log('contact')
           this.setState({ sectionVisible: true})
-          document.removeEventListener('scroll', this.trackScrolling);
+          //document.removeEventListener('scroll', this.trackScrolling);
       }
     };
       
@@ -69,7 +68,10 @@ class Contact extends React.Component {
       render() {
         return (
               <section id="contact" className={this.state.sectionVisible ? "animated fadeInRightBig delay-1s" : "section-pre-loaded"}>
-                 <h1 className="p-heading1">Get in Touch</h1>
+                 <div className="section-header">
+                      <h1 >Get In Touch</h1>
+                    <div style={{height: '2px', width: '50px', backgroundColor: 'black'}}/>
+                    </div>
               <Form onSubmit={this.handleSubmit.bind(this)}>
                 <FormGroup controlId="formBasicEmail">
                   <Label className="text-muted">Email address</Label>
@@ -114,7 +116,7 @@ class Contact extends React.Component {
                     onChange={this.handleChange.bind(this, 'message')}
                   />
                 </FormGroup>
-                <Button variant="primary" type="submit" style={{marginBottom: '20px'}} >
+                <Button variant="primary" type="submit" style={{marginBottom: '20px', color: '#32FBA4'}} >
                   Submit
                 </Button>
               </Form>

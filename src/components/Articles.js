@@ -6,8 +6,6 @@ class Articles extends React.Component {
     state = { sectionVisible: false }
 
     isSection(el) {
-        console.log(el.getBoundingClientRect().top)
-        console.log(window.pageYOffset)
         return el.getBoundingClientRect().top < window.innerHeight;
     }
       
@@ -22,18 +20,22 @@ class Articles extends React.Component {
       trackScrolling = () => {
         const wrappedElement = document.getElementById('articles'); 
         if (this.isSection(wrappedElement)){
+            this.props.setSection('articles');
             console.log('is article')
             this.setState({ sectionVisible: true})
-            document.removeEventListener('scroll', this.trackScrolling);
+            //document.removeEventListener('scroll', this.trackScrolling);
         }
       };
     render() {
         return (
-            <section id="articles" className={this.state.sectionVisible ? "animated fadeInLeftBig delay-1s" : "section-pre-loaded"}>
+            <section id="articles" className={this.state.sectionVisible ? "animated fadeInLeftBig " : "section-pre-loaded"}>
             <div>
-                <h1>
-                    Articles
-                </h1>
+            <div className="section-header">
+                        <h1 >
+                            Articles
+                        </h1>
+                        <div style={{height: '2px', width: '50px', backgroundColor: 'black'}}/>
+                    </div>
                 <div style={{width: '100%', minHeight: '60vh', display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', flexWrap: 'wrap'}}>
                     <blockquote class="embedly-card">
                         <h4>
